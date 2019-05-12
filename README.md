@@ -1,7 +1,7 @@
 # **RTMP NGINX docker lab**
 
 # Background
-I was looking for some application to demonstrate the container concept. Most of the examples on the web involve either simple application or more complex stuff that requires you to copy and paste code that only a developer can understand. As I am an infrastructure guy, I am looking for a no code application that is also complex enough to illustruate various container concept.
+I was looking for some application to demonstrate the container concept. Most of the examples on the web involve either simple application or more complex stuff that requires you to copy and paste code that only a developer can understand. As I am an infrastructure guy, I am looking for a no code application that is also substantial enough to illustrate various container concepts.
 
 I chance upon RTMP and NGINX and these will be the focus for this lab.
 
