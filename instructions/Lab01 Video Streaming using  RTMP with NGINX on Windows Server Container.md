@@ -62,3 +62,50 @@ There are 2 files to edit, use your favorite text editor, such as VS code or Not
 
 _Note: There should be an easier way to do this without manually modifying the conf file. For future enhancements_
 	
+###  2 Deploying RTMP NGINX containers using Dockerfile
+This section will outline the steps that will deploy all the containers required using Dockerfile.
+The Dockerfile for each container are located in the lab01, container name subfolder.
+You can take a look at the content of each Dockerfile (e.g. c:\lab01\nginx1\dockerfile)
+Sample below
+
+```
+#NGINX1 dockerfile 
+FROM mcr.microsoft.com/windows/servercore:ltsc2019 
+
+#copy nginx1 files
+COPY /nginx1-src /nginx
+
+WORKDIR /nginx
+
+#run command after container startup
+CMD ["/nginx/nginx.exe"]
+```
+
+The basic steps are
+
+- use servercore:ltsc2019 as base image
+ 
+- copy the nginx source files
+- run nginx when the container starts
+
+**1.1 building images**
+
+Run the following docker command to build nginx1 image
+> cd c:\docker\nginx1
+
+> docker build . -t nginx1-image
+
+To verify, run
+
+> docker images
+
+You should see an nginx1-image
+
+Repeat the steps for nginx2 and nginxlb
+
+>cd c:\docker\nginx2
+
+>docker build . -t nginx2-image
+
+> cd c:\docker\nginx-lb
+> docker build . -t nginx-lb-image
