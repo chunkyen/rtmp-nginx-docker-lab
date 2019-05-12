@@ -8,9 +8,10 @@ I chance upon RTMP and NGINX and these will be the focus for this lab.
 The initial focus for the lab will be to explore containers on Windows servers but can be expanded to other platform, such as Linux.
 
 # Objective
-To have a self contained container lab that is targeted at IT Professioinal looking to learn containers and Dockers.
+To have a lab that is targeted at IT Professioinal looking to learn containers and Dockers.
 
 # Lab architecture
 The lab will demonstrate how to stream video content to NGINX via RTMP. The live stream is then viewed via HLS from the NGINX.
 
 See the diagram below for the various components
+![alt text](https://github.com/chunkyen/rtmp-nginx-docker-lab/blob/master/rtmp-nginx-docker-lab-arch.jpg?raw=true)
