@@ -156,3 +156,18 @@ _Tip you can also use the powershell code below to test http connection_
 
 > iwr -method head http://localhost -UseBasicParsing
 
+**2.4 Streaming and viewing videos**
+
+We will use OBS to publish the video stream to nginx1.
+
+Launch OBS, go to settings, click the stream on the left column.
+
+- under stream type, select custom
+
+- under server type **rtmp://localhost/live**
+
+- under stream key, enter **demo**
+
+Back to the OBS screen, click on the + under media sources and select  a media source.
+In the media source dialog, accept the default name and click ok. Under local file, browse to the bunny video file you have downloaded previously and click ok. If the media can be publish, you will see a green icon at the bottom right of OBS.
+
