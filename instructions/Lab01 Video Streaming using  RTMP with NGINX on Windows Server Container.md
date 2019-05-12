@@ -138,3 +138,21 @@ It will use the nginx2-image and the container host will proxy port 8081 - 80 an
 Next nginx-lb. It will use the nginx-lb--image and the container host will only proxy port 80 - 80 to the container.
 
 > docker run --name nginx-lb -dti -p 80:80 nginx-lb-image
+
+**2.3 Testing the containers functionalities**
+
+Next we will verify if the containers are working.
+
+Use a browser to browse to http://localhost:8080
+
+You should see an nginx1 page
+
+Browse to http://localhost:8081 and you should see an nginx2 page.
+
+If you browse to http://localhost you should see either the nginx1 or nginx2 page because the nginx-lb is distributing to the 2 backend nginx containers using round robin. You might need to refresh multiple times or close the browser and start again to see the result.
+
+
+_Tip you can also use the powershell code below to test http connection_
+
+> iwr -method head http://localhost -UseBasicParsing
+
