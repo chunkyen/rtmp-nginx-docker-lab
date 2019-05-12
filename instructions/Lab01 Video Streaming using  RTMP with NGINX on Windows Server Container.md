@@ -108,4 +108,5 @@ Repeat the steps for nginx2 and nginxlb
 >docker build . -t nginx2-image
 
 > cd c:\docker\nginx-lb
+
 > docker build . -t nginx-lb-image
