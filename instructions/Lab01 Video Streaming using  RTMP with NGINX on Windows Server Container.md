@@ -169,5 +169,15 @@ Launch OBS, go to settings, click the stream on the left column.
 - under stream key, enter **demo**
 
 Back to the OBS screen, click on the + under media sources and select  a media source.
-In the media source dialog, accept the default name and click ok. Under local file, browse to the bunny video file you have downloaded previously and click ok. If the media can be publish, you will see a green icon at the bottom right of OBS.
+In the media source dialog, accept the default name and click ok. Under local file, browse to the bunny video file you have downloaded previously and click ok. If you see a green icon at the bottom right of OBS, it means the rtmp stream has sucessfully connect to the nginx1 container.
 
+To view video on the container host, browse to http://localhost/player.html
+
+Click on the play icon and wait for the stream to load. You should see the video playing.
+
+Refresh or close the browser window again and browse to http://localhost/player.html, you should connect to either nginx1 or nginx2.
+
+Browse to http://localhost/stats to see the video streaming stats.
+
+###  3 Deploying RTMP NGINX containers manually
+Manually deploying containers -- coming soon ...
