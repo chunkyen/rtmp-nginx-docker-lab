@@ -15,6 +15,9 @@ The lab will demonstrate how to stream video content to NGINX via RTMP. The live
 
 See the diagram below for the various components
 ![alt text](https://github.com/chunkyen/rtmp-nginx-docker-lab/blob/master/rtmp-nginx-docker-lab-arch1.jpg?raw=true)
+
+The lab components consist of 3 containers (NGINX1, NGINX2 and NGINX-LB), OBS to stream video to server and a client which will view the video via a web browser.
+
 - Open Broadcaster Studio (OBS) will stream the video to NGINX1 via RTMP (via port 1935)
 - Client will connect to the HLS webpage running on the NGINX servers (via HTTP port 80)
 - NGINX-LB container will load balance and proxy the HLS webpage  to the backend container (NGINX1 via port 8080  and NGINX2 via port 8081)
@@ -25,8 +28,25 @@ See the diagram below for the various components
 # Getting Started
 Refer to the lab guide in the instructions folder
 
-# To Do
-
-
-
 # Additional Info
+The Win32 NGINX binaries with rtmp module is pulled from this GIT repo
+[nginx-rtmp-win32](https://github.com/illuspas/nginx-rtmp-win32)
+
+More info on RTMP, HLS
+[RTMP HLS info](https://www.dacast.com/blog/hls-streaming-protocol/)
+
+NGINX
+[NGINX beginner guide](http://nginx.org/en/docs/beginners_guide.html)
+
+Docker for Windows
+[Docker for Windows guide](https://docs.docker.com/v17.09/docker-for-windows/)
+
+# To Do
+Note: The intial lab was only tested on Windows server 2019 with the container feature and Docker installed
+
+**Additional to do and enhancements**
+- Ensure the lab works on Docker on Windows 10 using Windows container
+- Make the lab works on Linux container
+- Use Docker compose
+- Use Docker swarm
+- Use Kubernetes
