@@ -1,8 +1,10 @@
 # LAB01 Deploying NGINX for video streaming using RTMP with Windows Container
 
 ### Pre-requisites
-1.  Windows Server 2019
-You will first need a Windows Server 2019 as your container host. You will need internet access on the container host for the lab to work.
+
+**1 Windows Server 2019**
+
+You need a Windows Server 2019 as your container host. You will need internet access on the container host for the lab to work.
 
 _Note: The docker deployment steps should work mostly on Docker for Windows Desktop for Windows 10 with some tweaking._
 
@@ -23,3 +25,22 @@ Type the following command to ensure that docker is working
 > docker info
 
 > docker --version
+
+Pull some images
+>docker pull mcr.microsoft.com/windows/servercore:ltsc2019
+
+>docker image pull mcr.microsoft.com/windows/nanoserver:1809
+
+**2 Extract the labfiles**
+
+After cloning or downloading the repo, extract/copy lab01 folder to c:\
+
+The folder structure should look something like this
+
+c:\
+ 
+* lab01
+  * nginx1
+  * nginx2
+  * nginx-lb
+ 
