@@ -6,7 +6,7 @@
 
 You need a Windows Server 2019 as your container host. You will need internet access on the container host for the lab to work.
 
-_Note: The docker deployment steps should work mostly on Docker for Windows Desktop for Windows 10 with some tweaking._
+_Note: The docker deployment steps should work mostly on Docker for Windows Desktop for Windows 10 with some tweaking. Also, do not follow the steps here to install docker. Instead take a look at [Installing Docker for Windows](https://docs.docker.com/v17.09/docker-for-windows/install/)_
 
 Run the following powershell code on Windows Server 2019 to install the container feature
 > Install-WindowsFeature -Name Containers
