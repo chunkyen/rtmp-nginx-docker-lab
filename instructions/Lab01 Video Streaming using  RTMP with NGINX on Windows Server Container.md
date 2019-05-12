@@ -1,8 +1,8 @@
 # LAB01 Deploying NGINX for video streaming using RTMP with Windows Container
 
-###  A) Pre-requisites
+###  1 Pre-requisites
 
-**1 Windows Server 2019**
+**1.1 Windows Server 2019**
 
 You need a Windows Server 2019 as your container host. You will need internet access on the container host for the lab to work.
 
@@ -31,7 +31,7 @@ Pull some images
 
 >docker image pull mcr.microsoft.com/windows/nanoserver:1809
 
-**2 Extract the labfiles**
+**1.2 Extract the labfiles**
 
 After cloning or downloading the repo, extract/copy lab01 folder (found in the labfiles folder) to c:\
 
@@ -44,7 +44,7 @@ c:\
   * nginx2
   * nginx-lb
 
-**3 Edit the NGINX conf file**
+**1.3 Edit the NGINX conf file**
 
 As the NGINX container need to reference the host IP address, we will need to replace the config file with your actual host IP.
 
