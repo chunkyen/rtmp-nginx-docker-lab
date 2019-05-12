@@ -61,7 +61,14 @@ There are 2 files to edit, use your favorite text editor, such as VS code or Not
 - Save the files after making the change
 
 _Note: There should be an easier way to do this without manually modifying the conf file. For future enhancements_
-	
+
+**1.4 Install OBS**
+
+Download and install OBS. [OBS download](https://obsproject.com/download)
+
+You will need a video file to stream. You can use the infamous big buck bunny video. [Big buck bunny](https://peach.blender.org/download/)
+
+
 ###  2 Deploying RTMP NGINX containers using Dockerfile
 This section will outline the steps that will deploy all the containers required using Dockerfile.
 The Dockerfile for each container are located in the lab01, container name subfolder.
