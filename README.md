@@ -22,6 +22,9 @@ See the diagram below for the various components
 -  NGINX2 container will receive RTMP from NGINX1 (via port 1936). It will also host the HLS webpage (via port 8081) for client to stream video.
 - NGINX-LB function as a load balancer to proxy the client request (via port 80) to the 2 backend NGINX container (8080 and 8081)
 
+# Getting Started
+Refer to the lab guide in the instructions folder
+
 # To Do
 
 
