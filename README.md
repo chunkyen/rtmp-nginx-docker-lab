@@ -42,6 +42,8 @@ More info on RTMP, HLS
 
 [Docker for Windows guide](https://docs.docker.com/v17.09/docker-for-windows/)
 
+[Open Broadcaster Software](https://obsproject.com/)
+
 # To Do
 Note: The intial lab was only tested on Windows server 2019 with the container feature and Docker installed
 
