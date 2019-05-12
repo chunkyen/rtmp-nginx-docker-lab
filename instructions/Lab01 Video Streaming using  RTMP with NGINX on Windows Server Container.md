@@ -88,7 +88,7 @@ The basic steps are
 - copy the nginx source files
 - run nginx when the container starts
 
-**1.1 building images**
+**2.1 building images**
 
 Run the following docker command to build nginx1 image
 > cd c:\docker\nginx1
@@ -110,3 +110,24 @@ Repeat the steps for nginx2 and nginxlb
 > cd c:\docker\nginx-lb
 
 > docker build . -t nginx-lb-image
+
+**2.2 Running containers**
+
+We will use the following command to run nginx1 container.
+> docker run --name nginx1 -dti -p 8080:80 -p 1935:1935 nginx1-image
+
+It will use the nginx1-image and the container host will proxy port 8080 - 80 and 1935 - 1935 to the container.
+
+Run the command below to verify
+
+> docker ps
+
+Repeat the steps for nginx2.
+
+It will use the nginx2-image and the container host will proxy port 8081 - 80 and 1936 - 1935 to the container.
+
+>docker run --name nginx2 -dti -p 8081:80 -p 1936:1935 nginx2-image
+
+Next nginx-lb. It will use the nginx-lb--image and the container host will only proxy port 80 - 80 to the container.
+
+> docker run --name nginx-lb -dti -p 80:80 nginx-lb-image
