@@ -1,12 +1,12 @@
 # LAB01 Deploying NGINX for video streaming using RTMP with Windows Container
 
-### Pre-requisites
+###  A) Pre-requisites
 
 **1 Windows Server 2019**
 
 You need a Windows Server 2019 as your container host. You will need internet access on the container host for the lab to work.
 
-_Note: The docker deployment steps should work mostly on Docker for Windows Desktop for Windows 10 with some tweaking. Also, do not follow the steps here to install docker. Instead take a look at [Installing Docker for Windows](https://docs.docker.com/v17.09/docker-for-windows/install/)_
+_Note: The lab guide should mostly work on Docker for Windows Desktop with some minor tweaking. If you are going to use this instead of Windows Server 2019, do not follow the steps below to install docker. Instead take a look at [Installing Docker for Windows](https://docs.docker.com/v17.09/docker-for-windows/install/)_
 
 Run the following powershell code on Windows Server 2019 to install the container feature
 > Install-WindowsFeature -Name Containers
@@ -33,7 +33,7 @@ Pull some images
 
 **2 Extract the labfiles**
 
-After cloning or downloading the repo, extract/copy lab01 folder to c:\
+After cloning or downloading the repo, extract/copy lab01 folder (found in the labfiles folder) to c:\
 
 The folder structure should look something like this
 
@@ -43,4 +43,22 @@ c:\
   * nginx1
   * nginx2
   * nginx-lb
- 
+
+**3 Edit the NGINX conf file**
+
+As the NGINX container need to reference the host IP address, we will need to replace the config file with your actual host IP.
+
+First type IPCONFIG in a command prompt to determine your container host IP. There should be multiple address, just pick the first address.
+
+There are 2 files to edit, use your favorite text editor, such as VS code or Notepad++.
+
+- Open c:\lab01\nginx1\nginx1-src\conf\nginx.conf
+- Find the line **_push rtmp://172.27.192.1:1936/live/demo;_**
+- And replace with **_push rtmp://your_container_host_ip:1936/live/demo;_**
+- Open c:\lab01\nginx-lb\nginx-lb-src\conf\nginx.conf
+- Find the line **_server 172.27.192.1:8080;_** and **_server 172.27.192.1:8081;_**
+- Replace with **_server your_container_host_ip:8080;_** and **_server your_container_host_ip:8081;_**
+- Save the files after making the change
+
+_Note: There should be an easier way to do this without manually modifying the conf file. For future enhancements_
+	
