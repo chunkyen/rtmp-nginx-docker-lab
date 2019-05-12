@@ -36,10 +36,10 @@ The Win32 NGINX binaries with rtmp module is pulled from this GIT repo
 More info on RTMP, HLS
 [RTMP HLS info](https://www.dacast.com/blog/hls-streaming-protocol/)
 
-NGINX
+
 [NGINX beginner guide](http://nginx.org/en/docs/beginners_guide.html)
 
-Docker for Windows
+
 [Docker for Windows guide](https://docs.docker.com/v17.09/docker-for-windows/)
 
 # To Do
