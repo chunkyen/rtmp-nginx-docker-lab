@@ -26,7 +26,8 @@ The lab components consist of 3 containers (NGINX1, NGINX2 and NGINX-LB), OBS to
 - NGINX-LB function as a load balancer to proxy the client request (via port 80) to the 2 backend NGINX container (8080 and 8081)
 
 # Getting Started
-Refer to the lab guide in the instructions folder
+Clone or download the files in this repo.
+Refer to the lab guide in the instructions folder.
 
 # Additional Info
 The Win32 NGINX binaries with rtmp module is pulled from this GIT repo
