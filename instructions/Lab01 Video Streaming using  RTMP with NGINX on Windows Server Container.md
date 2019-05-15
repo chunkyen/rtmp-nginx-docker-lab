@@ -98,7 +98,7 @@ The basic steps are
 **2.1 building images**
 
 Run the following docker command to build nginx1 image
-> cd c:\docker\nginx1
+> cd c:\lab01\nginx1
 
 > docker build . -t nginx1-image
 
@@ -110,7 +110,7 @@ You should see an nginx1-image
 
 Repeat the steps for nginx2 and nginxlb
 
->cd c:\docker\nginx2
+>cd c:\lab01\nginx2
 
 >docker build . -t nginx2-image
 
