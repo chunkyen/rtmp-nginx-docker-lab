@@ -135,7 +135,7 @@ It will use the nginx2-image and the container host will proxy port 8081 - 80 an
 
 >docker run --name nginx2 -dti -p 8081:80 -p 1936:1935 nginx2-image
 
-Next nginx-lb. It will use the nginx-lb--image and the container host will only proxy port 80 - 80 to the container.
+Next nginx-lb. It will use the nginx-lb-image and the container host will only proxy port 80 - 80 to the container.
 
 > docker run --name nginx-lb -dti -p 80:80 nginx-lb-image
 
