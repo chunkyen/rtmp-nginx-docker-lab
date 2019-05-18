@@ -180,4 +180,54 @@ Refresh or close the browser window again and browse to http://localhost/player.
 Browse to http://localhost/stats to see the video streaming stats.
 
 ###  3 Deploying RTMP NGINX containers manually
-Manually deploying containers -- coming soon ...
+The steps here shows how you can manually build a container image without a dockerfile. You will use the docker commit command but as you will learn, you will hardly use this in the real world. 
+
+Think of dockerfile as a recipie for a cook, the steps and ingredients of a dish is listed down in detail in the dockerfile. It is clear and repeatable (which leads to less error).
+
+The analogy of building a container image without a dockerfile is like a cooking without recording down the steps. You might still get the same dish, but no one knows (except the cook) what is inside the dish. It is difficult for others (even the original cook himself) to reproduce the exact same dish. Using a recipie is clearly the better approach.
+
+So the main purpose of this section is to compare and contrast with building with a dockerfile. You can cross reference the steps with the dockerfile used for the steps in section 2.
+
+**3.1 Building images with docker commit**
+
+First lets run a plain vanilla servercore image. The reason why we are publishing port 8080 is so that we can verify nginx is running correctly in the container later on.
+
+>docker run -dti --name nginx-base -p8080:80 mcr.microsoft.com/windows/servercore:ltsc2019
+
+Next we will need to copy the nginx executable, scripts and html files into the docker container.
+
+>docker cp c:\lab01\nginx1\nginx1-src\ nginx-base:c:\nginx
+
+We can attach into the nginx-image container to verify the files.
+
+>docker attach nginx-base
+
+You can cd to *c:\nginx* and do a *dir* to check that the files are copied. Press Ctrl + P follow by Ctrl + Q to exit the cmd of the running container.
+
+To verify that the nginx is running properly with the correct conf file, let's run nginx.exe in the container.
+
+>docker exec nginx-base c:\nginx\start.bat
+
+You should see an *Nginx started* message
+
+Open up a browser and navigate to http://localhost:8080, you should see the Nginx1 webpage.Let's convert this into an image.
+
+Stop the container
+
+>docker stop nginx-base
+
+Commit it into an image named nginx-base-image
+
+>docker commit nginx-base nginx-base-image
+
+Run *docker images* to verify that nginx-base-image is created. Notice that the *latest* tag was appended since we did not explicitly specify the tag.
+
+Finally, we will go through the steps of creating a new container based on this new nginx base image.
+
+>docker run -dti --name mynginx1 -p 8080:80 nginx-base-image cmd /k c:\nginx\start.bat
+
+Open up your browser again and navigate to http://localhost:8080, you should see the Nginx1 webpage. We will not continue with building Nginx2 and Nginx-lb since this is for demonstration purposes only, but you can see how tedious it is to manually build an image when compared with using a dockerfile.
+
+Clean up all containers and images if you want by using *docker rm* and *docker rmi*
+
+### End
