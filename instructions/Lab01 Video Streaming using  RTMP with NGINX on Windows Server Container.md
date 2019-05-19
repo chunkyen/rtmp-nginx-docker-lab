@@ -147,6 +147,8 @@ Use a browser to browse to http://localhost:8080
 
 You should see an nginx1 page
 
+*Note: If the page failed to load, check if Windows Firewall is disabled. You can also dobule check by attaching an cmd to the running container and ping from the container to the host and vice versa.*
+
 Browse to http://localhost:8081 and you should see an nginx2 page.
 
 If you browse to http://localhost you should see either the nginx1 or nginx2 page because the nginx-lb is distributing to the 2 backend nginx containers using round robin. You might need to refresh multiple times or close the browser and start again to see the result.
