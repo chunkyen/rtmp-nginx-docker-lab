@@ -44,23 +44,29 @@ c:\
   * nginx2
   * nginx-lb
 
-**1.3 Edit the NGINX conf file**
+~~**1.3 Edit the NGINX conf file**~~
 
-As the NGINX container need to reference the host IP address, we will need to replace the config file with your actual host IP.
+~~As the NGINX container need to reference the host IP address, we will need to replace the config file with your actual host IP.~~
 
-First type IPCONFIG in a command prompt to determine your container host IP. There should be multiple address, just pick the first address.
+~~First type IPCONFIG in a command prompt to determine your container host IP. There should be multiple address, just pick the first address.~~
 
-There are 2 files to edit, use your favorite text editor, such as VS code or Notepad++.
+~~There are 2 files to edit, use your favorite text editor, such as VS code or Notepad++.~~
 
-- Open c:\lab01\nginx1\nginx1-src\conf\nginx.conf
-- Find the line **_push rtmp://172.27.192.1:1936/live/demo;_**
-- And replace with **_push rtmp://your_container_host_ip:1936/live/demo;_**
-- Open c:\lab01\nginx-lb\nginx-lb-src\conf\nginx.conf
-- Find the line **_server 172.27.192.1:8080;_** and **_server 172.27.192.1:8081;_**
-- Replace with **_server your_container_host_ip:8080;_** and **_server your_container_host_ip:8081;_**
-- Save the files after making the change
+~~- Open c:\lab01\nginx1\nginx1-src\conf\nginx.conf~~
 
-_Note: There should be an easier way to do this without manually modifying the conf file. For future enhancements_
+~~- Find the line **_push rtmp://172.27.192.1:1936/live/demo;_**~~
+
+~~- And replace with **_push rtmp://your_container_host_ip:1936/live/demo;_**~~
+
+~~- Open c:\lab01\nginx-lb\nginx-lb-src\conf\nginx.conf~~
+
+~~- Find the line **_server 172.27.192.1:8080;_** and **_server 172.27.192.1:8081;_**~~
+
+~~- Replace with **_server your_container_host_ip:8080;_** and **_server your_container_host_ip:8081;_**~~
+
+~~- Save the files after making the change~~
+
+~~_Note: There should be an easier way to do this without manually modifying the conf file. For future enhancements_~~
 
 **1.4 Install OBS**
 
