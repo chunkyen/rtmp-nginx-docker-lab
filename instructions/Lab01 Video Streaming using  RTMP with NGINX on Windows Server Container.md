@@ -126,20 +126,23 @@ Repeat the steps for nginx2 and nginxlb
 
 **2.2 Running containers**
 
-We will use the following command to run nginx1 container.
-> docker run --name nginx1 -dti -p 8080:80 -p 1935:1935 nginx1-image
+We will use the following command to run nginx2 container.
+>docker run --name nginx2 -dti -p 8081:80 -p 1936:1935 nginx2-image
 
-It will use the nginx1-image and the container host will proxy port 8080 - 80 and 1935 - 1935 to the container.
+*Note we need to start nginx2 first as we are referencing nginx2 name in the config file of nginx1. If nginx2 name cannot be found when nginx1 container starts, nginx will not start sucessfully. *
+
+It will use the nginx2-image and the container host will proxy port 8081 - 80 and 1936 - 1935 to the container.
 
 Run the command below to verify
 
 > docker ps
 
-Repeat the steps for nginx2.
+Repeat the steps for nginx1.
 
-It will use the nginx2-image and the container host will proxy port 8081 - 80 and 1936 - 1935 to the container.
+It will use the nginx1-image and the container host will proxy port 8080 - 80 and 1935 - 1935 to the container.
 
->docker run --name nginx2 -dti -p 8081:80 -p 1936:1935 nginx2-image
+> docker run --name nginx1 -dti -p 8080:80 -p 1935:1935 nginx1-image
+
 
 Next nginx-lb. It will use the nginx-lb-image and the container host will only proxy port 80 - 80 to the container.
 
