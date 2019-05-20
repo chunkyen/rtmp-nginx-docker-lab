@@ -1,0 +1,18 @@
+#NGINX-base dockerfile 
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
+
+#download rtmp nginx zip from github
+#Extract files to c:\, rename folder to nginx and delete nginx-rtmp-win32.zip
+#rename the extracted folder to c:\nginx
+#delete the zip file
+
+RUN powershell.exe -Command \
+  $ErrorActionPreference = 'Stop'; \
+  Invoke-WebRequest 'https://github.com/illuspas/nginx-rtmp-win32/archive/dev.zip' -OutFile 'c:\nginx-rtmp-win32.zip' ;\
+  Expand-archive 'c:\nginx-rtmp-win32.zip' 'c:\' ;\
+  Rename-item 'c:\nginx-rtmp-win32-dev' 'c:\nginx' ;\
+  Remove-Item 'c:\nginx-rtmp-win32.zip' -Force
+
+
+#Label
+LABEL maintainer="me@email.local"
