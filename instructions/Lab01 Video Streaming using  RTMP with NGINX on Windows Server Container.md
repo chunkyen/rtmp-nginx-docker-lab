@@ -76,7 +76,7 @@ You will need a video file to stream. You can use the infamous big buck bunny vi
 
 
 ###  2 Deploying RTMP NGINX containers using Dockerfile
-This section will outline the steps that will deploy all the containers required using Dockerfile.
+This section will outline the steps that will be used to deploy all the containers required using Dockerfile.
 The Dockerfile for each container are located in the lab01, container name subfolder.
 You can take a look at the content of each Dockerfile (e.g. c:\lab01\nginx1\dockerfile)
 Sample below
@@ -129,7 +129,7 @@ Repeat the steps for nginx2 and nginxlb
 We will use the following command to run nginx2 container.
 >docker run -d --name nginx2 -p 8081:80 -p 1936:1935 nginx2-image
 
-*Note we need to start nginx2 first as we are referencing nginx2 name in the config file of nginx1. If nginx2 name cannot be found when nginx1 container starts, nginx will not start sucessfully. *
+*Note we need to start nginx2 first as we are referencing nginx2 name in the config file of nginx1. If nginx2 name cannot be found when nginx1 container starts, nginx will not start sucessfully.*
 
 It will use the nginx2-image and the container host will proxy port 8081 - 80 and 1936 - 1935 to the container.
 
