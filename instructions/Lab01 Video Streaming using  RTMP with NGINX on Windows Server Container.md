@@ -2,7 +2,7 @@
 
 ###  1 Pre-requisites
 
-**1.1 Windows Server 2019**
+**1.1 OS and Software**
 
 You need a Windows Server 2019 as your container host. You will need internet access on the container host for the lab to work.
 
