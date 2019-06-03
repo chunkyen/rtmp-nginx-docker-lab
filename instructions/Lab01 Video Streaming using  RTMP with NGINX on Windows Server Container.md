@@ -120,7 +120,7 @@ Repeat the steps for nginx2 and nginxlb
 
 >docker build . -t nginx2-image
 
-> cd c:\docker\nginx-lb
+> cd c:\lab01\nginx-lb
 
 > docker build . -t nginx-lb-image
 
@@ -241,6 +241,6 @@ Finally, we will go through the steps of creating a new container based on this 
 
 Open up your browser again and navigate to http://localhost:8080, you should see the Nginx1 webpage. We will not continue with building Nginx2 and Nginx-lb since this is for demonstration purposes only, but you can see how tedious it is to manually build an image when compared with using a dockerfile.
 
-Clean up all containers and images if you want by using *docker rm* and *docker rmi*
+Clean up the containers and images used in this lab if you want by using *docker rm* and *docker rmi*
 
 ### End
