@@ -48,9 +48,9 @@ More info on RTMP, HLS
 Note: The intial lab was only tested on Windows server 2019 with the container feature and Docker installed
 
 **Additional to do and enhancements**
-- Configure NGINX load balancer to perform health check on NGINX1 and NGINX2
-- Ensure the lab works on Docker on Windows 10 using Windows container
-- Make the lab works on Linux container
+- ~~Configure NGINX load balancer to perform health check on NGINX1 and NGINX2~~ Only for paid version of NGINX
+- Ensure the lab works on Docker on Windows 10 using Windows container - Done
+- Make the lab works on Linux container - Done
 - Use Docker compose
 - Use Docker swarm
 - Use Kubernetes
