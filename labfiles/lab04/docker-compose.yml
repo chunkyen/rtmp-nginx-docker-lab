@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  nginx2:
+    build: ./nginx2
+    image: nginx2-image
+    ports: 
+      - 8081:80
+      - 1936:1935
+    container_name: nginx2
+    
+  nginx1:
+    build: 
+    image: 
+    ports: 
+      - 
+      - 
+    container_name: 
+    links:
+      - 
+
+  nginx-lb:
+    build: 
+    image: 
+    ports: 
+      
+    container_name: 
+    links:
+      - 
+      - 

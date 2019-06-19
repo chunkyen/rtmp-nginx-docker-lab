@@ -1,0 +1,10 @@
+#NGINX1 dockerfile 
+FROM nginx-base:latest
+
+#copy nginx1 files
+COPY /nginx1-src /nginx
+
+WORKDIR /nginx
+
+#run command after container startup
+CMD ["/nginx/nginx.exe"]

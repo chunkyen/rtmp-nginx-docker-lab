@@ -1,0 +1,15 @@
+cd c:\lab03\nginx-base
+docker build . -t nginx-rtmp-base
+
+cd c:\lab03\nginx1
+docker build . -t nginx1-image
+
+cd c:\lab03\nginx2
+docker build . -t nginx2-image
+
+cd c:\lab03\nginx-lb
+docker build . -t nginx-lb-image
+
+docker run -d -p 8081:80 -p 1936:1935 --name nginx2 nginx2-image
+docker run -d -p 8080:80 -p 1935:1935 --name nginx1 --link=nginx2 nginx1-image
+docker run -d -p 80:80  --name nginx-lb --link=nginx1 --link=nginx2  nginx-lb-image
