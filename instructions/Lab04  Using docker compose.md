@@ -32,7 +32,7 @@ c:\
 
 **1.3 Install OBS**
 
-_Note: You shold have this if you perform lab01._
+_Note: You shold have this if you perform lab01/lab02/lab03._
 
 Download and install OBS. [OBS download](https://obsproject.com/download)
 
