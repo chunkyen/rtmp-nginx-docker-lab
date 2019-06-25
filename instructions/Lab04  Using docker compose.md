@@ -63,7 +63,7 @@ Run the following command to build the base image
 
 ###  3 Creating the docker compose file
 
-Similar to dockerfile, docker compose need a file to define the various parameters of the container.It is a text file with a yml extension (also called a yaml file). The default file name where docker-compose command will read from is docker-compose.yml, if an alternate file name is not specified.
+Similar to dockerfile, docker compose need a file to define the various parameters of the container. It is a text file with a yml extension (also called a yaml file). The default file name where docker-compose command will read from is docker-compose.yml, if an alternate file name is not specified.
 
  The basic structures of a docker compose file is as follow:
 
@@ -128,6 +128,8 @@ The basic syntax of the compose file is:
 - container name - the name of the container. If not specified, the default name will be assigned.
 - links - if we need container to connect to each other using name, we need to specify here
 
+_Additional Note: There is actually no need to enter the links parameters in the Docker compose file. This is because when we use a compose file to create the containers, it will automatically create a custom network. With this custom network, the containers in the compose file can reference each other using the container name_
+
 Fill in the rest of the missing values for nginx1 and nginx-lb in the file. You can reference lab03 section 2.3 for more info.
 
 **3.2 Executing the docker-compose command**
@@ -144,7 +146,7 @@ You should see that it is building each container based on the dockerfile.
 
 You can see all 3 containers running by executing the following command:
 
-> docker ps
+> docker-compose ps
 
 
 **3.3 Testing the containers functionalities**
